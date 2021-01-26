@@ -1,24 +1,39 @@
 import React from "react";
+import { Steps } from "antd";
 import styled from "styled-components";
-
-import Company from "../molecules/CompanyHeader";
+import CompanyHeader from "../molecules/CompanyHeader";
+import CompanyDescription from "../molecules/CompanyDescription";
 import SectionHeader from "../molecules/SectionHeader";
 
-const Section = styled.div`
-  margin: 15px 10px 10px 20px;
+const Step = styled(Steps.Step)`
+  .ant-steps-item-title {
+    display: block;
+  }
+
+  .ant-steps-item-container > .ant-steps-item-tail {
+    top: 10px !important;
+  }
+
+  .ant-steps-item-icon {
+    margin-top: 16px !important;
+  }
+
+  .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description {
+    color: black;
+  }
 `;
 
 export default function Experience({ title, Icon, companyList }) {
   return (
-    <Section>
+    <>
       <SectionHeader title={title} Icon={Icon} />
-      <div className="row">
-        <div className="col-11 offset-1 col-11-custom">
-          {companyList.map((company, index) => (
-            <Company company={company} finalIndex={index === companyList.length - 1} key={index} />
-          ))}
-        </div>
-      </div>
-    </Section>
+      <Steps progressDot current={companyList.length} direction="vertical">
+        {companyList.map((company, index) => {
+          const HeaderComponent = <CompanyHeader company={company} />;
+          const DescriptionComponent = <CompanyDescription company={company} />;
+          return <Step title={HeaderComponent} description={DescriptionComponent} key={index} />;
+        })}
+      </Steps>
+    </>
   );
 }

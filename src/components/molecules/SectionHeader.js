@@ -1,8 +1,9 @@
 import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { TitleHeader } from "../atoms/Styles";
 import { IconHolder } from "../atoms/Styles";
-import styled from "styled-components";
-
 import { MdEdit } from "react-icons/md";
 
 const MdEditCustom = styled(MdEdit)`
@@ -23,7 +24,9 @@ export default function SectionHeader({ title, Icon }) {
         <Icon />
       </IconHolder>
       <span>{title}</span>
-      <MdEditCustom />
+      <Link to={"layout"}>
+        <MdEditCustom />
+      </Link>
     </TitleHeader>
   );
 }

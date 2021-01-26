@@ -10,7 +10,6 @@ export const TitleHeader = styled.div`
 `;
 
 export const IconHolder = styled.span`
-  margin-right: 10px;
   color: black;
   height: 28px;
   width: 28px;
@@ -26,4 +25,9 @@ export const IconHolder = styled.span`
 
 export const ItalicDiv = styled.div`
   font-style: italic;
+`;
+
+export const RowFlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
 `;

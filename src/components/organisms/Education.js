@@ -27,7 +27,7 @@ export const EducationDiv = styled.div`
 
 export default function Education({ title, Icon, description }) {
   return (
-    <div>
+    <>
       <SectionHeader title={title} Icon={Icon} />
 
       {description.map((data, index) => (
@@ -42,6 +42,6 @@ export default function Education({ title, Icon, description }) {
           <div className="grade">{data.grade}</div>
         </EducationDiv>
       ))}
-    </div>
+    </>
   );
 }
