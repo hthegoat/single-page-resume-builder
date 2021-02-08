@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { TitleHeader } from "../atoms/Styles";
 import { IconHolder } from "../atoms/Styles";
 import { MdEdit } from "react-icons/md";
 
@@ -17,16 +16,30 @@ const MdEditCustom = styled(MdEdit)`
   }
 `;
 
-export default function SectionHeader({ title, Icon }) {
+export const Section = styled.div`
+  font-size: 20px;
+  font-weight: 500;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`;
+
+const TitleHolder = styled.div`
+  height: 27px;
+`;
+
+export default function SectionHeader({ title, Icon, onEditRoute }) {
   return (
-    <TitleHeader>
+    <Section>
       <IconHolder>
         <Icon />
       </IconHolder>
-      <span>{title}</span>
-      <Link to={"layout"}>
+      <TitleHolder>{title}</TitleHolder>
+      <Link to={onEditRoute ?? "layout"}>
         <MdEditCustom />
       </Link>
-    </TitleHeader>
+    </Section>
   );
 }

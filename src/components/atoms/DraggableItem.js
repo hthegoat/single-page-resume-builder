@@ -12,6 +12,7 @@ const StyledItem = styled.div`
   padding: 4px 8px;
   transition: background-color 0.5s ease-out;
   margin: 8px;
+  flex-grow: 1;
 
   :hover {
     background-color: #fff;

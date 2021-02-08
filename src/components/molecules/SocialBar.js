@@ -12,13 +12,14 @@ const SocialDiv = styled.div`
   margin: 12px 0px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `;
 
 export default function SocialBar({ linkedin, github }) {
   return (
     <SocialDiv>
       <div className="linkedin">
-        <IconHolder styles={{ "vertical-align": "middle" }}>
+        <IconHolder>
           <FaLinkedin />
         </IconHolder>
         <span>
@@ -28,7 +29,7 @@ export default function SocialBar({ linkedin, github }) {
         </span>
       </div>
       <div className="github">
-        <IconHolder styles={{ "vertical-align": "middle" }}>
+        <IconHolder>
           <FaGithub />
         </IconHolder>
         <span>

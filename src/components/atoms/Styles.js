@@ -1,25 +1,11 @@
 import styled from "styled-components";
 
-export const TitleHeader = styled.div`
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-  color: #007bff;
-  margin-bottom: 10px;
-  position: relative;
-`;
-
 export const IconHolder = styled.span`
-  color: black;
-  height: 28px;
-  width: 28px;
-  vertical-align: middle;
-
   svg {
-    vertical-align: top;
     margin-right: 10px;
     color: black;
-    font-size: 24px;
+    font-size: 1.5rem;
+    vertical-align: bottom;
   }
 `;
 
@@ -30,4 +16,9 @@ export const ItalicDiv = styled.div`
 export const RowFlexCenter = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+export const ColumnFlexCenter = styled(RowFlexCenter)`
+  flex-direction: column;
+  align-items: center;
 `;

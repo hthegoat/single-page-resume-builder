@@ -5,12 +5,12 @@ export const layoutSlice = createSlice({
   initialState: {
     column1: {
       id: "column1",
-      width: "2fr",
+      width: 67,
       list: ["Introduction", "Experience", "Projects", "Certificates"],
     },
     column2: {
       id: "column2",
-      width: "1fr",
+      width: 33,
       list: ["Summary", "Objective", "Skills", "Expertise", "Methodology", "Tools", "Education"],
     },
   },
@@ -28,7 +28,8 @@ export const layoutSlice = createSlice({
       state[destination.droppableId].list.splice(destination.index, 0, ...item);
     },
     updateWidth: (state, { payload }) => {
-      state.column1.width = +(payload / 6).toFixed(2);
+      state.column1.width = +payload[0].toFixed(2);
+      state.column2.width = +payload[1].toFixed(2);
     },
   },
 });
