@@ -1,6 +1,8 @@
 import React from "react";
 import { AiOutlineGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
+import { AiFillTwitterSquare } from "react-icons/ai";
+
 import { MdWork } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 import { MdCall } from "react-icons/md";
@@ -16,6 +18,7 @@ import { IoGitBranch } from "react-icons/io5";
 import { GoVerified } from "react-icons/go";
 
 const icons = new Map([
+    ["twitter", <AiFillTwitterSquare />],
     ["mobile", <MdCall />],
     ["email", <MdMail />],
     ["location", <MdLocationOn />],
